@@ -6,12 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TS-508 | Material Traceability Portal</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Material Traceability</title>
 
 <style>
 
@@ -21,197 +16,129 @@ padding:0;
 box-sizing:border-box;
 }
 
-:root{
-
---primary:#0B5ED7;
---primary2:#1E88E5;
---dark:#0F172A;
---text:#334155;
---border:#D9E4F2;
---bg:#EEF4FB;
---white:#FFFFFF;
-
-}
-
 body{
 
-font-family:'Poppins',sans-serif;
+background:#edf2f7;
 
-background:linear-gradient(135deg,#EAF3FF,#F8FBFF);
+font-family:"Segoe UI",Calibri,Arial,sans-serif;
 
-padding:35px;
+padding:30px;
 
-color:var(--text);
+color:#222;
 
 }
 
 .container{
 
-max-width:1300px;
+width:1000px;
 
 margin:auto;
 
-}
-
-.header{
-
-background:linear-gradient(135deg,#083B8C,#0B5ED7,#42A5F5);
-
-border-radius:24px;
-
-padding:35px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-color:#fff;
-
-box-shadow:0 18px 45px rgba(0,0,0,.15);
-
-margin-bottom:35px;
-
-}
-
-.leftHeader{
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
-
-}
-
-.logo{
-
-width:130px;
-
-height:90px;
-
 background:#fff;
 
-border-radius:18px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:10px;
-
-}
-
-.logo img{
-
-max-width:100%;
-
-max-height:100%;
-
-}
-
-.company h1{
-
-font-size:36px;
-
-font-weight:800;
-
-}
-
-.company p{
-
-font-size:16px;
-
-margin-top:8px;
-
-opacity:.95;
-
-}
-
-.verify{
-
-background:rgba(255,255,255,.15);
-
-padding:22px 28px;
-
-border-radius:20px;
-
-backdrop-filter:blur(10px);
-
-text-align:center;
-
-border:1px solid rgba(255,255,255,.25);
-
-}
-
-.verify small{
-
-display:block;
-
-font-size:12px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-}
-
-.verify h2{
-
-margin-top:10px;
-
-font-size:30px;
-
-}
-
-.verify span{
-
-display:block;
-
-margin-top:8px;
-
-font-size:14px;
-
-}
-
-.card{
-
-background:#fff;
-
-border-radius:22px;
-
-box-shadow:0 12px 35px rgba(0,0,0,.08);
+border-radius:15px;
 
 overflow:hidden;
 
-margin-bottom:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
 
 }
 
-.cardHeader{
 
-padding:22px 28px;
 
-background:linear-gradient(90deg,#083B8C,#0B5ED7,#42A5F5);
+/*==========================
+HEADER
+==========================*/
 
-color:#fff;
+.header{
 
-font-size:22px;
+background:linear-gradient(135deg,#0B2C55,#133E78,#0B2C55);
+
+padding:35px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.companyName{
+
+font-size:34px;
 
 font-weight:700;
 
-}
-
-.cardBody{
-
-padding:28px;
+letter-spacing:1px;
 
 }
 
-.infoTable{
+.portalName{
+
+margin-top:8px;
+
+font-size:17px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#FFD54F;
+
+font-weight:500;
+
+}
+
+.headerLine{
+
+margin-top:18px;
+
+height:3px;
+
+background:#FFD54F;
+
+width:180px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+border-radius:5px;
+
+}
+
+
+
+/*==========================
+SECTION TITLE
+==========================*/
+
+.section-title{
+
+background:linear-gradient(180deg,#1D5FBF,#0E4CA3);
+
+color:#fff;
+
+text-align:center;
+
+font-size:20px;
+
+font-weight:700;
+
+padding:12px;
+
+letter-spacing:.5px;
+
+border:none;
+
+}
+
+
+
+/*==========================
+MAIN TABLE
+==========================*/
+
+table{
 
 width:100%;
 
@@ -219,33 +146,41 @@ border-collapse:collapse;
 
 }
 
-.infoTable th{
+td{
 
-width:32%;
+border:1px solid #D7E0EA;
 
-background:#F5F9FF;
-
-padding:16px;
-
-text-align:left;
-
-border:1px solid var(--border);
-
-font-size:14px;
-
-}
-
-.infoTable td{
-
-padding:16px;
-
-border:1px solid var(--border);
+padding:12px;
 
 font-size:15px;
 
-font-weight:600;
+}
+
+.label{
+
+width:270px;
+
+background:#EAF3FF;
+
+color:#103C7A;
+
+font-weight:700;
 
 }
+
+.value{
+
+font-weight:600;
+
+background:white;
+
+}
+
+
+
+/*==========================
+MATERIAL TABLE
+==========================*/
 
 .materialTable{
 
@@ -255,106 +190,97 @@ border-collapse:collapse;
 
 }
 
-.materialTable thead{
-
-background:#0B5ED7;
-
-color:#fff;
-
-}
-
 .materialTable th{
 
-padding:16px;
+background:linear-gradient(180deg,#1D5FBF,#0E4CA3);
 
-text-align:left;
+color:white;
+
+padding:12px;
+
+border:1px solid #D7E0EA;
 
 }
 
 .materialTable td{
 
-padding:16px;
+background:white;
 
-border-bottom:1px solid #E5E7EB;
+border:1px solid #D7E0EA;
 
-}
+padding:14px;
 
-.materialTable tbody tr:nth-child(even){
-
-background:#F8FBFF;
+line-height:28px;
 
 }
 
-.materialTable tbody tr:hover{
+.materialDesc{
 
-background:#EEF6FF;
-
-transition:.2s;
+font-weight:600;
 
 }
+
+.materialMTC{
+
+text-align:center;
+
+font-weight:bold;
+
+color:#0B2C55;
+
+}
+
+
+
+/*==========================
+FOOTER
+==========================*/
 
 .footer{
 
-margin-top:40px;
+background:#f8f8f8;
 
 text-align:center;
 
-padding:30px;
-
-color:#64748B;
-
-}
-
-.badge{
-
-display:inline-block;
-
-padding:12px 24px;
-
-border-radius:30px;
-
-background:#E8FFF0;
-
-color:#0F8A4B;
-
-font-weight:700;
-
-margin-bottom:15px;
-
-}
-
-@media(max-width:900px){
-
-.header{
-
-flex-direction:column;
-
-text-align:center;
-
-gap:20px;
-
-}
-
-.leftHeader{
-
-flex-direction:column;
-
-}
-
-.company h1{
-
-font-size:28px;
-
-}
-
-.infoTable th,
-.infoTable td,
-.materialTable th,
-.materialTable td{
+padding:18px;
 
 font-size:13px;
 
-padding:12px;
+color:#666;
+
+border-top:1px solid #ddd;
+
+}
+
+.footer b{
+
+color:#0B2C55;
+
+}
+
+
+
+/*==========================
+PRINT
+==========================*/
+
+@media print{
+
+body{
+
+padding:0;
+
+background:white;
+
+}
+
+.container{
+
+width:100%;
+
+box-shadow:none;
+
+border-radius:0;
 
 }
 
@@ -370,121 +296,151 @@ padding:12px;
 
 <div class="header">
 
-<div class="leftHeader">
+<div class="companyName">
 
-<div class="logo">
-
-<img src="logo.png" alt="Logo">
+MetalMech Engineering
 
 </div>
 
-<div class="company">
+<div class="portalName">
 
-<h1>METAL MECH ENGINEERING</h1>
-
-<p>Material Traceability Portal</p>
+Material Traceability System
 
 </div>
 
-</div>
-
-<div class="verify">
-
-<small>System Status</small>
-
-<h2>Ã¢Å“â€ VERIFIED</h2>
-
-<span>TS-508</span>
+<div class="headerLine"></div>
 
 </div>
 
-</div>
+<div class="section-title">
 
-<div class="card">
-
-<div class="cardHeader">
-
-RMN Details
+RMN Details (Raw Material No)
 
 </div>
 
-<div class="cardBody">
-
-<table class="infoTable">
+<table>
 
 <tr>
-<th>Travel Card No</th>
-<td>TS-508</td>
+
+<td class="label">
+Travel Card No
+</td>
+
+<td class="value">
+TS-508
+</td>
+
 </tr>
 
 <tr>
-<th>Receive Date</th>
-<td>21/07/2026</td>
+
+<td class="label">
+Receive Date
+</td>
+
+<td class="value">
+21/07/2026
+</td>
+
 </tr>
 
 <tr>
-<th>RMN No</th>
-<td>R260721-01</td>
+
+<td class="label">
+RMN No
+</td>
+
+<td class="value">
+R260721-01
+</td>
+
 </tr>
 
 <tr>
-<th>GRN No</th>
-<td>26100235</td>
+
+<td class="label">
+GRN No
+</td>
+
+<td class="value">
+26100235
+</td>
+
 </tr>
 
 <tr>
-<th>Batch No</th>
-<td>ZEX261002351</td>
+
+<td class="label">
+Batch No
+</td>
+
+<td class="value">
+ZEX261002351
+</td>
+
 </tr>
 
 <tr>
-<th>Purchase Order No</th>
-<td>26100072</td>
+
+<td class="label">
+Purchase Order No
+</td>
+
+<td class="value">
+26100072
+</td>
+
 </tr>
 
 <tr>
-<th>Supplier Name</th>
-<td>Dimension Enterprise</td>
+
+<td class="label">
+Supplier Name
+</td>
+
+<td class="value">
+Dimension Enterprise
+</td>
+
 </tr>
 
 <tr>
-<th>Total Inward Qty</th>
-<td>319</td>
+
+<td class="label">
+Total Inward Qty
+</td>
+
+<td class="value">
+
+<b style="font-size:18px;color:#0B2C55;">
+319
+</b>
+
+</td>
+
 </tr>
 
 </table>
 
-</div>
-
-</div>
-
-<!-- =========================
-     MATERIAL CERTIFICATION
-========================= -->
-
-<div class="card">
-
-<div class="cardHeader">
-
-Material Certification
-
-</div>
-
-<div class="cardBody">
+<br>
 
 <table class="materialTable">
 
-<thead>
-
 <tr>
 
-<th style="width:75%">Material Description</th>
+<th style="width:75%;">
 
-<th style="width:25%">MTC No</th>
+Material Description
+
+</th>
+
+<th style="width:25%;">
+
+MTC No
+
+</th>
 
 </tr>
-
-</thead>
 
 <tbody>
 
@@ -493,117 +449,118 @@ Material Certification
 <tr><td>45.00mm Round Solid Stainless Steel (S.S 316)</td><td>MKSL-0453.1</td></tr>
 
 
-<!--
-Example VBA Output
-
-<tr>
-<td>50.00mm Hex Solid Stainless Steel (S.S.316)</td>
-<td>MKSL-0450.1</td>
-</tr>
-
-<tr>
-<td>55.00mm Hex Solid Stainless Steel (S.S.316)</td>
-<td>MKSL-0451.1</td>
-</tr>
-
-<tr>
-<td>45.00mm Round Solid Stainless Steel (S.S.316)</td>
-<td>MKSL-0453.1</td>
-</tr>
-
--->
-
 </tbody>
 
 </table>
 
-</div>
+<br>
+
+<div class="section-title">
+
+CMN Details (Component Number)
 
 </div>
 
-<!-- =========================
-     COMPONENT DETAILS
-========================= -->
-
-<div class="card">
-
-<div class="cardHeader">
-
-Component Details
-
-</div>
-
-<div class="cardBody">
-
-<table class="infoTable">
+<table>
 
 <tr>
 
-<th>Component Description</th>
+<td class="label">
 
-<td>MM EX E1FUNV 40 SUB GLAND STAINLESS STEEL (S.S. 316)</td>
+Component Description
+
+</td>
+
+<td class="value">
+
+MM EX E1FUNV 40 SUB GLAND STAINLESS STEEL (S.S. 316)
+
+</td>
 
 </tr>
 
 <tr>
 
-<th>CMN No</th>
+<td class="label">
 
-<td>C26072101-01</td>
+CMN No
+
+</td>
+
+<td class="value">
+
+C26072101-01
+
+</td>
 
 </tr>
 
 <tr>
 
-<th>Travel Card Qty</th>
+<td class="label">
 
-<td>319</td>
+Travel Card Qty
+
+</td>
+
+<td class="value">
+
+<b style="font-size:18px;color:#0B2C55;">
+319
+</b>
+
+</td>
 
 </tr>
 
 </table>
 
-</div>
-
-</div>
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <div class="footer">
 
-<div class="badge">
+<div style="font-size:18px;font-weight:700;color:#0B2C55;margin-bottom:8px;">
 
-Ã¢Å“â€ VERIFIED MATERIAL TRACEABILITY RECORD
+MetalMech Engineering
 
 </div>
 
-<h3 style="color:#0B5ED7;font-size:24px;margin-bottom:8px;">
+<div style="font-size:14px;color:#666;">
 
-METAL MECH ENGINEERING
+Material Traceability System
 
-</h3>
+</div>
 
-<p style="font-size:16px;margin-bottom:8px;">
+<hr style="margin:15px 0;border:none;border-top:1px solid #d9d9d9;">
 
-Material Traceability Portal
+<table style="width:100%;border:none;">
 
-</p>
+<tr>
 
-<p style="font-size:14px;color:#64748B;">
+<td style="border:none;text-align:left;font-size:13px;color:#777;">
+
+Generated On :
+<b>{{GenerateDate}}</b>
+
+</td>
+
+<td style="border:none;text-align:right;font-size:13px;color:#777;">
 
 Travel Card :
 <b>TS-508</b>
 
-</p>
+</td>
 
-<p style="font-size:13px;margin-top:10px;color:#94A3B8;">
+</tr>
 
-Last Updated :
-02-Aug-2026 01:47 PM
+</table>
 
-</p>
+<div style="margin-top:18px;
+font-size:12px;
+color:#999;">
+
+Ã‚Â© MetalMech Engineering |
+Material Traceability System
+
+</div>
 
 </div>
 
