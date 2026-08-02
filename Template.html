@@ -1,168 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{TravelCardNo}} | Material Traceability Portal</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Material Traceability</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
---primary:#0B5ED7;--primary2:#1E88E5;--dark:#0F172A;
---text:#334155;--border:#D9E4F2;--bg:#EEF4FB;--white:#FFF;
-}
-body{
-font-family:'Poppins',Arial,Helvetica,sans-serif;
-background:linear-gradient(135deg,#EAF3FF,#F8FBFF);
-padding:24px;color:var(--text);
-}
-.container{max-width:1300px;margin:auto}
-.header{
-background:linear-gradient(135deg,#083B8C,#0B5ED7,#42A5F5);
-border-radius:22px;padding:28px;
-display:flex;justify-content:space-between;align-items:center;
-gap:20px;color:#fff;
-box-shadow:0 16px 40px rgba(0,0,0,.15);
-margin-bottom:28px;
-}
-.leftHeader{display:flex;align-items:center;gap:20px}
-.logo{
-width:120px;height:85px;background:#fff;border-radius:16px;
-display:flex;justify-content:center;align-items:center;padding:10px;
-}
-.logo img{max-width:100%;max-height:100%}
-.company h1{font-size:34px;font-weight:800}
-.company p{margin-top:6px}
-.verify{
-background:rgba(255,255,255,.15);
-padding:20px 26px;border-radius:18px;
-backdrop-filter:blur(10px);
-text-align:center;border:1px solid rgba(255,255,255,.25);
-}
-.verify small{display:block;text-transform:uppercase;letter-spacing:2px;font-size:11px}
-.verify h2{margin-top:8px;font-size:28px}
-.verify span{display:block;margin-top:8px}
-.card{
-background:#fff;border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-overflow:hidden;margin-bottom:24px;
-}
-.cardHeader{
-padding:18px 24px;
-background:linear-gradient(90deg,#083B8C,#0B5ED7,#42A5F5);
-color:#fff;font-size:22px;font-weight:700;
-}
-.cardBody{padding:22px}
-.table-wrapper{overflow-x:auto;width:100%}
-.infoTable,.materialTable{width:100%;border-collapse:collapse;min-width:650px}
-.infoTable th,.infoTable td{
-border:1px solid var(--border);padding:14px;font-size:14px
-}
-.infoTable th{background:#F5F9FF;text-align:left;width:32%}
-.infoTable td{font-weight:600}
-.materialTable thead{background:#0B5ED7;color:#fff}
-.materialTable th,.materialTable td{padding:14px;text-align:left}
-.materialTable td{border-bottom:1px solid #E5E7EB}
-.materialTable tbody tr:nth-child(even){background:#F8FBFF}
-.materialTable tbody tr:hover{background:#EEF6FF}
-.footer{text-align:center;padding:30px;color:#64748B}
-.badge{
-display:inline-block;background:#E8FFF0;color:#0F8A4B;
-padding:10px 20px;border-radius:999px;font-weight:700;margin-bottom:15px
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-@media (max-width:768px){
-body{padding:10px}
-.header{flex-direction:column;text-align:center}
-.leftHeader{flex-direction:column}
-.logo{width:90px;height:70px}
-.company h1{font-size:24px}
-.verify{width:100%}
-.cardHeader{font-size:18px}
-.cardBody{padding:14px}
-.infoTable,.materialTable{min-width:520px}
+body{
+
+background:#edf2f7;
+
+font-family:"Segoe UI",Calibri,Arial,sans-serif;
+
+padding:30px;
+
+color:#222;
+
 }
+
+.container{
+
+width:1000px;
+
+margin:auto;
+
+background:#fff;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+
+/*==========================
+HEADER
+==========================*/
+
+.header{
+
+background:linear-gradient(135deg,#0B2C55,#133E78,#0B2C55);
+
+padding:35px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.companyName{
+
+font-size:34px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.portalName{
+
+margin-top:8px;
+
+font-size:17px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#FFD54F;
+
+font-weight:500;
+
+}
+
+.headerLine{
+
+margin-top:18px;
+
+height:3px;
+
+background:#FFD54F;
+
+width:180px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+border-radius:5px;
+
+}
+
+
+
+/*==========================
+SECTION TITLE
+==========================*/
+
+.section-title{
+
+background:linear-gradient(180deg,#1D5FBF,#0E4CA3);
+
+color:#fff;
+
+text-align:center;
+
+font-size:20px;
+
+font-weight:700;
+
+padding:12px;
+
+letter-spacing:.5px;
+
+border:none;
+
+}
+
+
+
+/*==========================
+MAIN TABLE
+==========================*/
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+td{
+
+border:1px solid #D7E0EA;
+
+padding:12px;
+
+font-size:15px;
+
+}
+
+.label{
+
+width:270px;
+
+background:#EAF3FF;
+
+color:#103C7A;
+
+font-weight:700;
+
+}
+
+.value{
+
+font-weight:600;
+
+background:white;
+
+}
+
+
+
+/*==========================
+MATERIAL TABLE
+==========================*/
+
+.materialTable{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.materialTable th{
+
+background:linear-gradient(180deg,#1D5FBF,#0E4CA3);
+
+color:white;
+
+padding:12px;
+
+border:1px solid #D7E0EA;
+
+}
+
+.materialTable td{
+
+background:white;
+
+border:1px solid #D7E0EA;
+
+padding:14px;
+
+line-height:28px;
+
+}
+
+.materialDesc{
+
+font-weight:600;
+
+}
+
+.materialMTC{
+
+text-align:center;
+
+font-weight:bold;
+
+color:#0B2C55;
+
+}
+
+
+
+/*==========================
+FOOTER
+==========================*/
+
+.footer{
+
+background:#f8f8f8;
+
+text-align:center;
+
+padding:18px;
+
+font-size:13px;
+
+color:#666;
+
+border-top:1px solid #ddd;
+
+}
+
+.footer b{
+
+color:#0B2C55;
+
+}
+
+
+
+/*==========================
+PRINT
+==========================*/
+
+@media print{
+
+body{
+
+padding:0;
+
+background:white;
+
+}
+
+.container{
+
+width:100%;
+
+box-shadow:none;
+
+border-radius:0;
+
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
 
 <div class="container">
 
 <div class="header">
-<div class="leftHeader">
-<div class="logo"><img src="company_logo.png" alt="Logo"></div>
-<div class="company">
-<h1>METAL MECH ENGINEERING</h1>
-<p>Material Traceability Portal</p>
-</div>
+
+<div class="companyName">
+
+MetalMech Engineering
+
 </div>
 
-<div class="verify">
-<small>System Status</small>
-<h2>&#10004; VERIFIED</h2>
-<span>{{TravelCardNo}}</span>
-</div>
+<div class="portalName">
+
+Material Traceability System
+
 </div>
 
-<div class="card">
-<div class="cardHeader">RMN Details</div>
-<div class="cardBody">
-<div class="table-wrapper">
-<table class="infoTable">
-<tr><th>Travel Card No</th><td>{{TravelCardNo}}</td></tr>
-<tr><th>Receive Date</th><td>{{ReceiveDate}}</td></tr>
-<tr><th>RMN No</th><td>{{RMNNo}}</td></tr>
-<tr><th>GRN No</th><td>{{GRNNo}}</td></tr>
-<tr><th>Batch No</th><td>{{BatchNo}}</td></tr>
-<tr><th>Purchase Order No</th><td>{{PurchaseOrderNo}}</td></tr>
-<tr><th>Supplier Name</th><td>{{SupplierName}}</td></tr>
-<tr><th>Total Inward Qty</th><td>{{TotalInwardQty}}</td></tr>
+<div class="headerLine"></div>
+
+</div>
+
+<div class="section-title">
+
+RMN Details (Raw Material No)
+
+</div>
+
+<table>
+
+<tr>
+
+<td class="label">
+Travel Card No
+</td>
+
+<td class="value">
+{{TravelCardNo}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+Receive Date
+</td>
+
+<td class="value">
+{{ReceiveDate}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+RMN No
+</td>
+
+<td class="value">
+{{RMNNo}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+GRN No
+</td>
+
+<td class="value">
+{{GRNNo}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+Batch No
+</td>
+
+<td class="value">
+{{BatchNo}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+Purchase Order No
+</td>
+
+<td class="value">
+{{PONo}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+Supplier Name
+</td>
+
+<td class="value">
+{{SupplierName}}
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+Total Inward Qty
+</td>
+
+<td class="value">
+
+<b style="font-size:18px;color:#0B2C55;">
+{{TotalInwardQty}}
+</b>
+
+</td>
+
+</tr>
+
 </table>
-</div>
-</div>
-</div>
 
-<div class="card">
-<div class="cardHeader">Material Certification</div>
-<div class="cardBody">
-<div class="table-wrapper">
+<br>
+
 <table class="materialTable">
-<thead>
-<tr><th style="width:75%">Material Description</th><th style="width:25%">MTC No</th></tr>
-</thead>
-<tbody>
-{{MaterialRows}}
-</tbody>
+
+<tr>
+
+<th style="width:75%;">
+
+Material Description
+
+</th>
+
+<th style="width:25%;">
+
+MTC No
+
+</th>
+
+</tr>
+
+<tr>
+
+<td class="materialDesc">
+
+{{MatDescription}}
+
+</td>
+
+<td class="materialMTC">
+
+{{MTCNo}}
+
+</td>
+
+</tr>
+
 </table>
-</div>
-</div>
+
+<br>
+
+<div class="section-title">
+
+CMN Details (Component Number)
+
 </div>
 
-<div class="card">
-<div class="cardHeader">Component Details</div>
-<div class="cardBody">
-<div class="table-wrapper">
-<table class="infoTable">
-<tr><th>Component Description</th><td>{{ComponentDescription}}</td></tr>
-<tr><th>CMN No</th><td>{{CMNNo}}</td></tr>
-<tr><th>Travel Card Qty</th><td>{{TravelCardQty}}</td></tr>
+<table>
+
+<tr>
+
+<td class="label">
+
+Component Description
+
+</td>
+
+<td class="value">
+
+{{ComponentDescription}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+
+CMN No
+
+</td>
+
+<td class="value">
+
+{{CMNNo}}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="label">
+
+Travel Card Qty
+
+</td>
+
+<td class="value">
+
+<b style="font-size:18px;color:#0B2C55;">
+{{TravelCardQty}}
+</b>
+
+</td>
+
+</tr>
+
 </table>
-</div>
-</div>
-</div>
 
 <div class="footer">
-<div class="badge">&#10004; VERIFIED MATERIAL TRACEABILITY RECORD</div>
-<h3 style="color:#0B5ED7;font-size:24px;margin-bottom:8px;">METAL MECH ENGINEERING</h3>
-<p style="margin-bottom:8px;">Material Traceability Portal</p>
-<p>Travel Card : <b>{{TravelCardNo}}</b></p>
-<p style="margin-top:10px;font-size:13px;color:#94A3B8;">Last Updated : {{LastUpdated}}</p>
+
+<div style="font-size:18px;font-weight:700;color:#0B2C55;margin-bottom:8px;">
+
+MetalMech Engineering
+
+</div>
+
+<div style="font-size:14px;color:#666;">
+
+Material Traceability System
+
+</div>
+
+<hr style="margin:15px 0;border:none;border-top:1px solid #d9d9d9;">
+
+<table style="width:100%;border:none;">
+
+<tr>
+
+<td style="border:none;text-align:left;font-size:13px;color:#777;">
+
+Generated On :
+<b>{{GenerateDate}}</b>
+
+</td>
+
+<td style="border:none;text-align:right;font-size:13px;color:#777;">
+
+Travel Card :
+<b>{{TravelCardNo}}</b>
+
+</td>
+
+</tr>
+
+</table>
+
+<div style="margin-top:18px;
+font-size:12px;
+color:#999;">
+
+© MetalMech Engineering |
+Material Traceability System
+
 </div>
 
 </div>
+
+</div>
+
 </body>
+
 </html>
