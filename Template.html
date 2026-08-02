@@ -1,611 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>{{TravelCardNo}} | Material Traceability Portal</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 :root{
-
---primary:#0B5ED7;
---primary2:#1E88E5;
---dark:#0F172A;
---text:#334155;
---border:#D9E4F2;
---bg:#EEF4FB;
---white:#FFFFFF;
-
+--primary:#0B5ED7;--primary2:#1E88E5;--dark:#0F172A;
+--text:#334155;--border:#D9E4F2;--bg:#EEF4FB;--white:#FFF;
 }
-
 body{
-
-font-family:'Poppins',sans-serif;
-
+font-family:'Poppins',Arial,Helvetica,sans-serif;
 background:linear-gradient(135deg,#EAF3FF,#F8FBFF);
-
-padding:35px;
-
-color:var(--text);
-
+padding:24px;color:var(--text);
 }
-
-.container{
-
-max-width:1300px;
-
-margin:auto;
-
-}
-
+.container{max-width:1300px;margin:auto}
 .header{
-
 background:linear-gradient(135deg,#083B8C,#0B5ED7,#42A5F5);
-
-border-radius:24px;
-
-padding:35px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-color:#fff;
-
-box-shadow:0 18px 45px rgba(0,0,0,.15);
-
-margin-bottom:35px;
-
+border-radius:22px;padding:28px;
+display:flex;justify-content:space-between;align-items:center;
+gap:20px;color:#fff;
+box-shadow:0 16px 40px rgba(0,0,0,.15);
+margin-bottom:28px;
 }
-
-.leftHeader{
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
-
-}
-
+.leftHeader{display:flex;align-items:center;gap:20px}
 .logo{
-
-width:130px;
-
-height:90px;
-
-background:#fff;
-
-border-radius:18px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:10px;
-
+width:120px;height:85px;background:#fff;border-radius:16px;
+display:flex;justify-content:center;align-items:center;padding:10px;
 }
-
-.logo img{
-
-max-width:100%;
-
-max-height:100%;
-
-}
-
-.company h1{
-
-font-size:36px;
-
-font-weight:800;
-
-}
-
-.company p{
-
-font-size:16px;
-
-margin-top:8px;
-
-opacity:.95;
-
-}
-
+.logo img{max-width:100%;max-height:100%}
+.company h1{font-size:34px;font-weight:800}
+.company p{margin-top:6px}
 .verify{
-
 background:rgba(255,255,255,.15);
-
-padding:22px 28px;
-
-border-radius:20px;
-
+padding:20px 26px;border-radius:18px;
 backdrop-filter:blur(10px);
-
-text-align:center;
-
-border:1px solid rgba(255,255,255,.25);
-
+text-align:center;border:1px solid rgba(255,255,255,.25);
 }
-
-.verify small{
-
-display:block;
-
-font-size:12px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-}
-
-.verify h2{
-
-margin-top:10px;
-
-font-size:30px;
-
-}
-
-.verify span{
-
-display:block;
-
-margin-top:8px;
-
-font-size:14px;
-
-}
-
+.verify small{display:block;text-transform:uppercase;letter-spacing:2px;font-size:11px}
+.verify h2{margin-top:8px;font-size:28px}
+.verify span{display:block;margin-top:8px}
 .card{
-
-background:#fff;
-
-border-radius:22px;
-
-box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-overflow:hidden;
-
-margin-bottom:30px;
-
+background:#fff;border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+overflow:hidden;margin-bottom:24px;
 }
-
 .cardHeader{
-
-padding:22px 28px;
-
+padding:18px 24px;
 background:linear-gradient(90deg,#083B8C,#0B5ED7,#42A5F5);
-
-color:#fff;
-
-font-size:22px;
-
-font-weight:700;
-
+color:#fff;font-size:22px;font-weight:700;
 }
-
-.cardBody{
-
-padding:28px;
-
+.cardBody{padding:22px}
+.table-wrapper{overflow-x:auto;width:100%}
+.infoTable,.materialTable{width:100%;border-collapse:collapse;min-width:650px}
+.infoTable th,.infoTable td{
+border:1px solid var(--border);padding:14px;font-size:14px
 }
-
-.infoTable{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-.infoTable th{
-
-width:32%;
-
-background:#F5F9FF;
-
-padding:16px;
-
-text-align:left;
-
-border:1px solid var(--border);
-
-font-size:14px;
-
-}
-
-.infoTable td{
-
-padding:16px;
-
-border:1px solid var(--border);
-
-font-size:15px;
-
-font-weight:600;
-
-}
-
-.materialTable{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-.materialTable thead{
-
-background:#0B5ED7;
-
-color:#fff;
-
-}
-
-.materialTable th{
-
-padding:16px;
-
-text-align:left;
-
-}
-
-.materialTable td{
-
-padding:16px;
-
-border-bottom:1px solid #E5E7EB;
-
-}
-
-.materialTable tbody tr:nth-child(even){
-
-background:#F8FBFF;
-
-}
-
-.materialTable tbody tr:hover{
-
-background:#EEF6FF;
-
-transition:.2s;
-
-}
-
-.footer{
-
-margin-top:40px;
-
-text-align:center;
-
-padding:30px;
-
-color:#64748B;
-
-}
-
+.infoTable th{background:#F5F9FF;text-align:left;width:32%}
+.infoTable td{font-weight:600}
+.materialTable thead{background:#0B5ED7;color:#fff}
+.materialTable th,.materialTable td{padding:14px;text-align:left}
+.materialTable td{border-bottom:1px solid #E5E7EB}
+.materialTable tbody tr:nth-child(even){background:#F8FBFF}
+.materialTable tbody tr:hover{background:#EEF6FF}
+.footer{text-align:center;padding:30px;color:#64748B}
 .badge{
-
-display:inline-block;
-
-padding:12px 24px;
-
-border-radius:30px;
-
-background:#E8FFF0;
-
-color:#0F8A4B;
-
-font-weight:700;
-
-margin-bottom:15px;
-
+display:inline-block;background:#E8FFF0;color:#0F8A4B;
+padding:10px 20px;border-radius:999px;font-weight:700;margin-bottom:15px
 }
 
-@media(max-width:900px){
-
-.header{
-
-flex-direction:column;
-
-text-align:center;
-
-gap:20px;
-
+@media (max-width:768px){
+body{padding:10px}
+.header{flex-direction:column;text-align:center}
+.leftHeader{flex-direction:column}
+.logo{width:90px;height:70px}
+.company h1{font-size:24px}
+.verify{width:100%}
+.cardHeader{font-size:18px}
+.cardBody{padding:14px}
+.infoTable,.materialTable{min-width:520px}
 }
-
-.leftHeader{
-
-flex-direction:column;
-
-}
-
-.company h1{
-
-font-size:28px;
-
-}
-
-.infoTable th,
-.infoTable td,
-.materialTable th,
-.materialTable td{
-
-font-size:13px;
-
-padding:12px;
-
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
 
 <div class="container">
 
 <div class="header">
-
 <div class="leftHeader">
-
-<div class="logo">
-
-<img src="logo.png" alt="Logo">
-
-</div>
-
+<div class="logo"><img src="company_logo.png" alt="Logo"></div>
 <div class="company">
-
 <h1>METAL MECH ENGINEERING</h1>
-
 <p>Material Traceability Portal</p>
-
 </div>
-
 </div>
 
 <div class="verify">
-
 <small>System Status</small>
-
-<h2>✔ VERIFIED</h2>
-
+<h2>&#10004; VERIFIED</h2>
 <span>{{TravelCardNo}}</span>
-
 </div>
-
 </div>
 
 <div class="card">
-
-<div class="cardHeader">
-
-RMN Details
-
-</div>
-
+<div class="cardHeader">RMN Details</div>
 <div class="cardBody">
-
+<div class="table-wrapper">
 <table class="infoTable">
-
-<tr>
-<th>Travel Card No</th>
-<td>{{TravelCardNo}}</td>
-</tr>
-
-<tr>
-<th>Receive Date</th>
-<td>{{ReceiveDate}}</td>
-</tr>
-
-<tr>
-<th>RMN No</th>
-<td>{{RMNNo}}</td>
-</tr>
-
-<tr>
-<th>GRN No</th>
-<td>{{GRNNo}}</td>
-</tr>
-
-<tr>
-<th>Batch No</th>
-<td>{{BatchNo}}</td>
-</tr>
-
-<tr>
-<th>Purchase Order No</th>
-<td>{{PurchaseOrderNo}}</td>
-</tr>
-
-<tr>
-<th>Supplier Name</th>
-<td>{{SupplierName}}</td>
-</tr>
-
-<tr>
-<th>Total Inward Qty</th>
-<td>{{TotalInwardQty}}</td>
-</tr>
-
+<tr><th>Travel Card No</th><td>{{TravelCardNo}}</td></tr>
+<tr><th>Receive Date</th><td>{{ReceiveDate}}</td></tr>
+<tr><th>RMN No</th><td>{{RMNNo}}</td></tr>
+<tr><th>GRN No</th><td>{{GRNNo}}</td></tr>
+<tr><th>Batch No</th><td>{{BatchNo}}</td></tr>
+<tr><th>Purchase Order No</th><td>{{PurchaseOrderNo}}</td></tr>
+<tr><th>Supplier Name</th><td>{{SupplierName}}</td></tr>
+<tr><th>Total Inward Qty</th><td>{{TotalInwardQty}}</td></tr>
 </table>
-
 </div>
-
 </div>
-
-<!-- =========================
-     MATERIAL CERTIFICATION
-========================= -->
+</div>
 
 <div class="card">
-
-<div class="cardHeader">
-
-Material Certification
-
-</div>
-
+<div class="cardHeader">Material Certification</div>
 <div class="cardBody">
-
+<div class="table-wrapper">
 <table class="materialTable">
-
 <thead>
-
-<tr>
-
-<th style="width:75%">Material Description</th>
-
-<th style="width:25%">MTC No</th>
-
-</tr>
-
+<tr><th style="width:75%">Material Description</th><th style="width:25%">MTC No</th></tr>
 </thead>
-
 <tbody>
-
 {{MaterialRows}}
-
-<!--
-Example VBA Output
-
-<tr>
-<td>50.00mm Hex Solid Stainless Steel (S.S.316)</td>
-<td>MKSL-0450.1</td>
-</tr>
-
-<tr>
-<td>55.00mm Hex Solid Stainless Steel (S.S.316)</td>
-<td>MKSL-0451.1</td>
-</tr>
-
-<tr>
-<td>45.00mm Round Solid Stainless Steel (S.S.316)</td>
-<td>MKSL-0453.1</td>
-</tr>
-
--->
-
 </tbody>
-
 </table>
-
 </div>
-
 </div>
-
-<!-- =========================
-     COMPONENT DETAILS
-========================= -->
+</div>
 
 <div class="card">
-
-<div class="cardHeader">
-
-Component Details
-
-</div>
-
+<div class="cardHeader">Component Details</div>
 <div class="cardBody">
-
+<div class="table-wrapper">
 <table class="infoTable">
-
-<tr>
-
-<th>Component Description</th>
-
-<td>{{ComponentDescription}}</td>
-
-</tr>
-
-<tr>
-
-<th>CMN No</th>
-
-<td>{{CMNNo}}</td>
-
-</tr>
-
-<tr>
-
-<th>Travel Card Qty</th>
-
-<td>{{TravelCardQty}}</td>
-
-</tr>
-
+<tr><th>Component Description</th><td>{{ComponentDescription}}</td></tr>
+<tr><th>CMN No</th><td>{{CMNNo}}</td></tr>
+<tr><th>Travel Card Qty</th><td>{{TravelCardQty}}</td></tr>
 </table>
-
 </div>
-
 </div>
-
-<!-- =========================
-     FOOTER
-========================= -->
+</div>
 
 <div class="footer">
-
-<div class="badge">
-
-✔ VERIFIED MATERIAL TRACEABILITY RECORD
-
-</div>
-
-<h3 style="color:#0B5ED7;font-size:24px;margin-bottom:8px;">
-
-METAL MECH ENGINEERING
-
-</h3>
-
-<p style="font-size:16px;margin-bottom:8px;">
-
-Material Traceability Portal
-
-</p>
-
-<p style="font-size:14px;color:#64748B;">
-
-Travel Card :
-<b>{{TravelCardNo}}</b>
-
-</p>
-
-<p style="font-size:13px;margin-top:10px;color:#94A3B8;">
-
-Last Updated :
-{{LastUpdated}}
-
-</p>
-
+<div class="badge">&#10004; VERIFIED MATERIAL TRACEABILITY RECORD</div>
+<h3 style="color:#0B5ED7;font-size:24px;margin-bottom:8px;">METAL MECH ENGINEERING</h3>
+<p style="margin-bottom:8px;">Material Traceability Portal</p>
+<p>Travel Card : <b>{{TravelCardNo}}</b></p>
+<p style="margin-top:10px;font-size:13px;color:#94A3B8;">Last Updated : {{LastUpdated}}</p>
 </div>
 
 </div>
-
 </body>
-
 </html>
